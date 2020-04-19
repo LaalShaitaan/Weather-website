@@ -10,8 +10,8 @@ request({url, json: true},(error,{body})=>{
       callback('Unable to find location',undefined)
     }
     else{
-      const {weather_descriptions, temperature, feelslike}= body.current
-      callback(undefined,'The weather looks like '+weather_descriptions[0]+'. It is currently '+temperature+' degrees out and it feels like '+feelslike);
+      const {weather_descriptions, temperature, feelslike, humidity}= body.current
+      callback(undefined,'The weather outside looks like '+weather_descriptions[0]+'. It is currently '+temperature+' degrees out and it feels like '+feelslike+'. The current Humidity is '+humidity+'%.');
     }
   })
 }
